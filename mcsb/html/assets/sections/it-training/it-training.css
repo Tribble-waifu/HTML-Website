@@ -1,0 +1,459 @@
+:root {
+    --beige-color: #F5F5DC;
+    --dark-beige: #E8E8D0;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Underline animation for nav links */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--text-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100%;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    padding: 0.5rem 0;
+    margin-top: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0.5rem;
+}
+
+.dropdown-content li {
+    display: block;
+}
+
+.dropdown-content li a {
+    padding: 0.8rem 1.5rem;
+    display: block;
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content li a:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-content li a::after {
+    display: none;
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -80%;
+        width: 80%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 1.5rem;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Dropdown styles for mobile */
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        padding: 0.5rem 0;
+        background: transparent;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content li {
+        padding-left: 1rem;
+    }
+
+    .dropdown-content li a {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+
+    /* Remove underline effect from dropdown items */
+    .dropdown-content li a::after {
+        display: none;
+    }
+}
+
+/* Menu toggle animation */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+    }
+    to {
+        width: 300px; /* Increased line width */
+    }
+}
+
+/* Slide 1 styles */
+#slide1 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('../../background/tanjung_tokong.jpeg'); /* Updated path */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    padding: 0 20px;
+    margin-top: 70px; /* Account for navbar height */
+}
+
+/* Black overlay */
+#slide1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Content styling with animations */
+#slide1 h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+#slide1 .divider {
+    width: 300px;
+    height: 3px;
+    background: white;
+    margin: 1.5rem 0;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards,
+               expandWidth 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+#slide1 p {
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #slide1 {
+        height: calc(100vh - 70px); /* Adjust for navbar */
+        margin-top: 70px;
+    }
+
+    #slide1 h1 {
+        font-size: 2.2rem;
+        padding: 0 15px;
+    }
+
+    #slide1 .divider {
+        width: 200px;
+    }
+
+    #slide1 p {
+        font-size: 1rem;
+        padding: 0 20px;
+        max-width: 300px;
+    }
+}
+
+/* Slide 2 styles */
+#slide2 {
+    min-height: 100vh;
+    background-color: var(--beige-color);
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#slide2 h2 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.programming-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.programming-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.programming-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.card-content h3 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .programming-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #slide2 {
+        padding: 80px 20px;
+    }
+
+    #slide2 h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .programming-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .card-content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #slide2 {
+        padding: 60px 15px;
+    }
+
+    #slide2 h2 {
+        font-size: 1.8rem;
+    }
+
+    .programming-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .card-content h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Slider container */
+.slider {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+/* Common slide styles */
+.slide {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* Customize scrollbar */
+.slider::-webkit-scrollbar {
+    width: 8px;
+}
+
+.slider::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.slider::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}

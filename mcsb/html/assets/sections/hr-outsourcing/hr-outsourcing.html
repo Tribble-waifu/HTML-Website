@@ -3,102 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCSB - HR Outsourcing Services</title>
-    <link rel="stylesheet" href="./hr-outsourcing.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <title>MCSB - HR Outsourcing</title>
+    <link rel="stylesheet" href="hr-outsourcing.css">
 </head>
 <body>
-    <nav>
+    <nav class="navbar">
         <div class="logo">
-            <img src="../../../assets/logo/mcsb.png" alt="MCSB Logo">
+            <a href="../home/index.html"><img src="../../logo/mcsb.png" alt="MCSB Logo"></a>
         </div>
-        <div class="mobile-menu-btn">
-            <span>☰</span>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <div class="nav-links">
-            <a href="../../../index.html">Home</a>
-            <div class="dropdown">
-                <a href="../outsource/outsource.html" class="dropdown-trigger">Outsource</a>
-                <div class="dropdown-content">
-                    <a href="../it-outsourcing/it-outsourcing.html">IT Outsourcing</a>
-                    <a href="../hr-outsourcing/hr-outsourcing.html" class="active">HR Outsourcing</a>
-                </div>
-            </div>
-            <a href="../../../index.html#about">About</a>
-            <a href="../../../index.html#services">Services</a>
-            <a href="../../../index.html#contact">Contact</a>
-        </div>
+        <ul class="nav-links">
+            <li><a href="../home/index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-trigger">Outsource</a>
+                <ul class="dropdown-content">
+                    <li><a href="../outsource/outsource.html">Home</a></li>
+                    <li><a href="../it-outsourcing/it-outsourcing.html">IT Outsource</a></li>
+                    <li><a href="../hr-outsourcing/hr-outsourcing.html">HR Outsource</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-trigger">Services</a>
+                <ul class="dropdown-content">
+                    <li><a href="../services/services.html">Home</a></li>
+                    <li><a href="../hr-software/hr-software.html">HR Software</a></li>
+                    <li><a href="../payroll-outsourcing/payroll-outsourcing.html">Payroll Outsourcing</a></li>
+                </ul>
+            </li>
+            <li><a href="../it-training/it-training.html">IT Training</a></li>
+            <li><a href="../../../index.html#about">About</a></li>
+            <li><a href="../../../index.html#career">Career</a></li>
+            <li><a href="../../../index.html#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <div class="swiper">
-        <div class="swiper-wrapper">
-            <!-- Slide 1: Intro -->
-            <div class="swiper-slide">
-                <img src="../../../assets/background/kuala-lumpur.jpg" alt="HR Outsourcing">
-                <div class="slide-content">
-                    <h1>HR Outsourcing</h1>
-                    <div class="horizontal-line"></div>
-                    <p>Transform your human resources management with our comprehensive outsourcing solutions, designed to streamline your HR operations and enhance workforce productivity</p>
-                </div>
-            </div>
+    <div class="slider">
+        <section class="slide" id="slide1" style="background-image: url('../../background/kuala-lumpur.jpg');">
+            <h1>HR OUTSOURCING</h1>
+            <div class="divider"></div>
+            <p>EMPOWERING YOUR WORKFORCE WITH PROFESSIONAL HR SOLUTIONS</p>
+        </section>
 
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-                <div class="text-section">
-                    <h1>Our HR Outsourcing</h1>
-                </div>
+        <section class="slide" id="slide2">
+            <div class="title-section">
+                <h2>Why Choose MCSB?</h2>
             </div>
+            <div class="reasons-container">
+                <div class="reasons-grid">
+                    <div class="reason-card">
+                        <img src="../../icon/assessment.png" alt="Assessment Icon">
+                        <h3>Professional Assessment</h3>
+                        <p>Thorough screening & competency based assessment</p>
+                    </div>
 
-            <!-- Slide 3 -->
-            <div class="swiper-slide">
-                <div class="text-section">
-                    <h1>Our HR Outsourcing</h1>
-                </div>
-            </div>
+                    <div class="reason-card">
+                        <img src="../../icon/database.png" alt="Database Icon">
+                        <h3>Extensive Talent Pool</h3>
+                        <p>Strong pool of databases specializing in IT, HR, Sales & Finance</p>
+                    </div>
 
-            <!-- Slide 4 -->
-            <div class="swiper-slide">
-                <div class="text-section">
-                    <h1>Our HR Outsourcing</h1>
-                </div>
-            </div>
+                    <div class="reason-card">
+                        <img src="../../icon/hr.png" alt="HR System Icon">
+                        <h3>Digital HR Solutions</h3>
+                        <p>Online-based HR systems for Leave Management, Payslip Viewing Access, Overtime & Claims Processes</p>
+                    </div>
 
-            <!-- Slide 5 -->
-            <div class="swiper-slide">
-                <div class="text-section">
-                    <h1>Our HR Outsourcing</h1>
-                </div>
-            </div>
+                    <div class="reason-card">
+                        <img src="../../icon/compliance.png" alt="Compliance Icon">
+                        <h3>Legal Compliance</h3>
+                        <p>Employment Contract to hired staff in compliance with Labour Law & Government Mandatory Contributions (EPF, SOCSO, HRDF & Income Tax)</p>
+                    </div>
 
-            <!-- Slide 6 -->
-            <div class="swiper-slide">
-                <div class="text-section">
-                    <h1>Our HR Outsourcing</h1>
-                </div>
-            </div>
+                    <div class="reason-card">
+                        <img src="../../icon/flexible.png" alt="Flexible Icon">
+                        <h3>Business Adaptability</h3>
+                        <p>Flexible & Agile Approach to meet specific client's business needs</p>
+                    </div>
 
-            <!-- Slide 7 -->
-            <div class="swiper-slide">
-                <div class="text-section">
-                    <h1>Our HR Outsourcing</h1>
+                    <div class="reason-card">
+                        <img src="../../icon/risk.png" alt="Risk Icon">
+                        <h3>Cost Efficiency</h3>
+                        <p>Risk Reduction & Costs Savings of staff turnover & severance compensation</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Slide 8 -->
-            <div class="swiper-slide">
-                <div class="text-section">
-                    <h1>What We Offer</h1>
+        <section class="slide" id="slide3">
+            <h2>What We Offer?</h2>
+            <div class="services-container">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="../../icon/temporary.png" alt="Temporary Workforce Icon">
+                        <h3>Temporary Workforce</h3>
+                        <p>In a dynamic, unpredictable market, organizations must be able to react and align their strategies to gain advantage in the market force. Increasingly, employers are utilizing temporary workforce strategies to provide flexibility. As the number of temporary workforce sources increases, so do the challenges, such as managing cost, standardizing processes and tracking performance. We partner with you to fully understand your needs. Allow us to leverage our deep experience and expertise to design innovative solutions that are completely tailored to maximize your temporary labor's needs.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="../../icon/contract.png" alt="Contract to Permanent Icon">
+                        <h3>Contract to Permanent Conversion</h3>
+                        <p>We provide term-based workforce solution, talent-driven outsourcing of operations, functions and services to enhance flexibility and drive productivity. Built upon our deep recruiting experience and our expertise in crafting impactful outsourcing solutions, we deliver the talent you need on a term-basis with the option to convert and hire under your permanent employment</p>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="../../icon/recruitment.png" alt="RPO Icon">
+                        <h3>Recruitment Process Outsourcing</h3>
+                        <p>MCSB provides Recruitment Process Outsourcing (RPO) solutions leveraging our 30 years of experience in the industry. We provide flexible and scalable recruitment solutions include but not limited to sourcing and selection to onboarding management. Built upon our deep recruitment expertise and based on thorough processes, our systematic approach ensures the results you need — greater predictability of cost, a more efficient recruiting process, an improved candidate experience and, most importantly, improved talent quality.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Navigation -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-pagination"></div>
+        </section>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="./hr-outsourcing.js"></script>
+    <script src="hr-outsourcing.js"></script>
 </body>
 </html>

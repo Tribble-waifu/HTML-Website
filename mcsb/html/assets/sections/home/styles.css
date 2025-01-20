@@ -142,12 +142,13 @@ body {
     .nav-links {
         position: fixed;
         top: 70px;
-        right: -100%;
-        flex-direction: column;
-        background: white;
+        right: -80%;
         width: 80%;
-        max-width: 300px;
         height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
         padding: 2rem;
         gap: 1.5rem;
         transition: right 0.3s ease;
@@ -158,17 +159,66 @@ body {
         right: 0;
     }
 
+    .nav-links li {
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Main menu items */
+    .nav-links > li > a {
+        display: inline-block;
+        padding: 0.5rem 0;
+        font-size: 1rem;
+        position: relative;
+    }
+
+    /* Underline for active items */
+    .nav-links > li > a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: #000;
+        transition: width 0.3s ease;
+    }
+
+    .nav-links > li > a.active::after,
+    .dropdown.active > a::after {
+        width: 100%;
+    }
+
+    /* Dropdown styles */
     .dropdown-content {
         position: static;
         box-shadow: none;
-        padding-left: 1rem;
+        padding: 0.5rem 0;
+        background: transparent;
         opacity: 1;
         visibility: visible;
         display: none;
+        width: 100%;
     }
 
     .dropdown.active .dropdown-content {
         display: block;
+    }
+
+    .dropdown-content li {
+        padding-left: 1rem;
+    }
+
+    .dropdown-content li a {
+        display: block;
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+        color: #000;
+    }
+
+    /* Remove underline effect from dropdown items */
+    .dropdown-content li a::after {
+        display: none;
     }
 }
 
